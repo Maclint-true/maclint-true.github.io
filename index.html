@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Nothing Extra News Backups — приложение владельца проекта Ничего лишнего | News для создания резервных копий SQLite и сохранения их в Google Drive.">
+  <title>Nothing Extra News Backups — резервные копии</title>
+  <!-- GOOGLE_SITE_VERIFICATION: вставьте сюда метатег из Google Search Console, если выберете подтверждение через HTML-тег. -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html"><span class="mark" aria-hidden="true">N.</span><span>Nothing Extra News Backups<small>Ничего лишнего | News</small></span></a>
+  <a class="nav" href="privacy.html">Политика конфиденциальности ↗</a>
+</header>
+<main>
+  <section class="hero" aria-labelledby="title">
+    <div>
+      <span class="eyebrow">Приложение резервного копирования</span>
+      <h1 id="title">Резервные копии<br>новостного бота.</h1>
+      <p class="lead">Nothing Extra News Backups создаёт снимки базы проекта «Ничего лишнего | News» и сохраняет их на Google Drive владельца проекта для восстановления после сбоев.</p>
+      <a class="button" href="#access">Как используется доступ к Drive ↓</a>
+    </div>
+    <aside class="backup-card" aria-label="Назначение приложения">
+      <div class="card-top"><span>SQLITE → GOOGLE DRIVE</span><span>BACKUP</span></div>
+      <div class="file"><strong>news.db</strong><span>Подписки · очередь · жалобы · служебные данные</span></div>
+      <div class="card-bottom"><span class="status-dot" aria-hidden="true"></span><span>Копии для восстановления проекта</span></div>
+    </aside>
+  </section>
+  <section class="section" aria-labelledby="how">
+    <h2 id="how">Что делает приложение</h2>
+    <div class="grid">
+      <article><div class="step">01 / СОЗДАНИЕ</div><h3>Снимок SQLite</h3><p>Копирует базу через SQLite Backup API и проверяет целостность полученного файла.</p></article>
+      <article><div class="step">02 / ХРАНЕНИЕ</div><h3>Копия на Google Drive</h3><p>Создаёт свою папку, загружает файлы резервных копий и сверяет их размер и контрольную сумму.</p></article>
+      <article><div class="step">03 / ОБСЛУЖИВАНИЕ</div><h3>Ограниченный архив</h3><p>Удаляет старые копии своего проекта сверх заданного лимита. Подготовленные снимки можно использовать для восстановления базы.</p></article>
+    </div>
+  </section>
+  <section class="section scope" id="access" aria-labelledby="access-title">
+    <div><h2 id="access-title">Для чего нужен<br>доступ к Google</h2><p class="muted">Доступ разрешает владелец Google-аккаунта через стандартный экран OAuth. Он нужен для внешнего хранения резервных копий.</p><p class="mini">Пользователям Telegram-бота не требуется подключать свои Google-аккаунты. Эти страницы описывают служебное приложение владельца проекта.</p></div>
+    <div class="scope-box"><h3>Разрешение <code>drive.file</code></h3><p>Приложение создаёт файлы резервных копий и управляет ими. Полный доступ ко всем файлам Google Drive не запрашивается.</p><ul><li>Создание папки и загрузка копий базы.</li><li>Чтение метаданных файлов: имя, размер, ID, дата и контрольная сумма.</li><li>Удаление старых файлов копий, отмеченных идентификатором этого проекта.</li></ul><a class="mini" href="privacy.html#google">Подробнее об использовании Google API →</a></div>
+  </section>
+  <section class="section" aria-labelledby="storage">
+    <h2 id="storage">Хранение по количеству файлов</h2>
+    <div class="retention"><div><strong>2</strong><span>последние локальные копии</span></div><div><strong>30</strong><span>последних копий на Drive</span></div></div>
+    <p class="muted">Это текущие настройки проекта. Ручные и служебные копии также учитываются в лимитах; количество файлов не означает строгое число дней хранения.</p>
+    <div class="callout"><p>Копии содержат данные базы Telegram-бота, включая идентификаторы пользователей и подписки. Они не публикуются на этом сайте. Дополнительное шифрование файлов резервных копий в текущей конфигурации не включено.</p></div>
+  </section>
+  <section class="contact" aria-labelledby="contact"><div><h2 id="contact">Вопросы о приложении</h2><p class="muted">Владелец проекта: Администратор проекта «Ничего лишнего | News»<br><a href="mailto:djmaclint@gmail.com">djmaclint@gmail.com</a></p></div><a class="button" href="privacy.html">Открыть политику →</a></section>
+</main>
+<footer><span>Ничего лишнего | News · Nothing Extra News Backups</span><a href="privacy.html">Конфиденциальность</a></footer>
+</body>
+</html>
